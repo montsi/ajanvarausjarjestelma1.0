@@ -10,10 +10,10 @@ app.listen(port, () => console.log(`Server started on port ${port}`));
 
 const mysql = require("mysql");
 const connection = mysql.createConnection({
-    host: 'mysql.labranet.jamk.fi',
-    user: 'L4784',
-    password: 'zd3hFKBcjeaebSpYj5IaZfrn8Tmzi2Kd',
-    database: 'L4784_3'
+    host: 'us-cdbr-iron-east-05.cleardb.net',
+    user: 'b65e4533626915',
+    password: '168cbd91',
+    database: 'heroku_4963eb6f0202eb8'
 });
 
 app.use(express.static(path.join(__dirname, 'client/build')));
