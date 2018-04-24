@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 //Hakee kaikki hoidot
 app.get('/api/hoidot', (req, res) => {
-    connection.query('SELECT * from L4784_3.HOITO', function(err, rows, fields) {
+    connection.query('SELECT * from heroku_4963eb6f0202eb8.HOITO', function(err, rows, fields) {
         if (!err) {
             res.send(JSON.stringify(rows));
         } else {
@@ -33,7 +33,7 @@ app.get('/api/hoidot', (req, res) => {
 app.post('/api/tyontekijat', function(req, res) {  {/* Hakee valitun hoidon perusteella mahdolliset työntekijät*/}                                     
     const hoito = req.body.hoito;
     console.log(hoito);
-    connection.query('SELECT * from L4784_3.TYONTEKIJA WHERE hoidot LIKE ?',["%" + hoito + "%"], function(err, rows, fields) {
+    connection.query('SELECT * from heroku_4963eb6f0202eb8.TYONTEKIJA WHERE hoidot LIKE ?',["%" + hoito + "%"], function(err, rows, fields) {
         if (!err) {
             res.send(JSON.stringify(rows));
             console.log(rows);  
