@@ -16,6 +16,7 @@ const connection = mysql.createConnection({
     database: 'heroku_4963eb6f0202eb8'
 });
 
+//front end route
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 //Hakee kaikki hoidot
